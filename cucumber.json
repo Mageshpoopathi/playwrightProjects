@@ -1,0 +1,19 @@
+{
+    "default":{
+        "require":[
+            "steps/*.js",
+            "pages/*.js",
+            "utils/*.js"
+        ],
+        "paths":[
+            "features/*.feature"
+        ],
+        "format":[
+            "json:reports/cucumber-report.json",
+            "html:reports/report.html",
+            "junit:reports/report.xml",
+            "summary",
+            "progress-bar"
+        ]
+    }
+}

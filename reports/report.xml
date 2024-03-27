@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="1.103127298" tests="1">
+  <testcase classname="login to demo cycylos website" name="login with valid credentials" time="1.103127298">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+Then User should login with valid credentials.............................passed]]></system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,8 @@
+{
+    "cucumberautocomplete.steps": [
+        "steps/*.js"
+    ],
+    "cucumberautocomplete.pages": {
+        "pages":"pages/*.js"
+    }
+}

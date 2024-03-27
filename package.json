@@ -1,0 +1,20 @@
+{
+  "name": "Playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js --require ./steps/*.js ./features/*.feature --tags @valid --format=progress"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "dotenv": "^16.4.5"
+  }
+}

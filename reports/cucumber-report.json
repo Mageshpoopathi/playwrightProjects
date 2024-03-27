@@ -1,0 +1,68 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1099214999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3286799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "User should login with valid credentials",
+            "match": {
+              "location": "steps\\login.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 625500
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@valid",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-to-demo-cycylos-website",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "login to demo cycylos website",
+    "tags": [
+      {
+        "name": "@valid",
+        "line": 1
+      }
+    ],
+    "uri": "features\\login.feature"
+  }
+]
