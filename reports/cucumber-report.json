@@ -4,65 +4,99 @@
     "elements": [
       {
         "description": "",
-        "id": "login-to-demo-cycylos-website;login-with-valid-credentials",
+        "id": "verifying-payment-to-system--module;user-should-pay-a-amount-to-the-system",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "login with valid credentials",
+        "line": 3,
+        "name": "user should pay a amount to the system",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1099214999
+              "duration": 1418675099
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
-            "name": "User should navigate to the page URL",
+            "line": 4,
+            "name": "User should login to the application and navigate to the bannking menu",
             "match": {
-              "location": "steps\\login.js:4"
+              "location": "steps\\paymentToSystem.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 3286799
+              "duration": 9424200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "User should click the payment to system option",
+            "match": {
+              "location": "steps\\paymentToSystem.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2314499
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "User should login with valid credentials",
+            "name": "User should enter the amount within the balance and select the paynow option in the scheduling type",
             "match": {
-              "location": "steps\\login.js:7"
+              "location": "steps\\paymentToSystem.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 625500
+              "duration": 9766900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User fill the description and click the confirm button",
+            "match": {
+              "location": "steps\\paymentToSystem.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4999499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "User should see the message \"The payment was successfully processed\"",
+            "match": {
+              "location": "steps\\paymentToSystem.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10497900
             }
           }
         ],
         "tags": [
           {
-            "name": "@valid",
-            "line": 1
+            "name": "@abc",
+            "line": 2
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "login-to-demo-cycylos-website",
-    "line": 2,
+    "id": "verifying-payment-to-system--module",
+    "line": 1,
     "keyword": "Feature",
-    "name": "login to demo cycylos website",
-    "tags": [
-      {
-        "name": "@valid",
-        "line": 1
-      }
-    ],
-    "uri": "features\\login.feature"
+    "name": "Verifying payment to system  module",
+    "tags": [],
+    "uri": "features\\paymentToSystem.feature"
   }
 ]
