@@ -6,7 +6,7 @@
         "description": "",
         "id": "verifying-payment-to-system--module;user-should-pay-a-amount-to-the-system",
         "keyword": "Scenario",
-        "line": 3,
+        "line": 4,
         "name": "user should pay a amount to the system",
         "steps": [
           {
@@ -14,89 +14,207 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1418675099
+              "duration": 2984768600
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 4,
+            "line": 5,
             "name": "User should login to the application and navigate to the bannking menu",
             "match": {
               "location": "steps\\paymentToSystem.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 9424200
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 5,
-            "name": "User should click the payment to system option",
-            "match": {
-              "location": "steps\\paymentToSystem.js:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2314499
+              "duration": 11412100
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
+            "name": "User should click the payment to system option",
+            "match": {
+              "location": "steps\\paymentToSystem.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7066799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
             "name": "User should enter the amount within the balance and select the paynow option in the scheduling type",
             "match": {
               "location": "steps\\paymentToSystem.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 9766900
+              "duration": 4944399
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 7,
+            "line": 8,
             "name": "User fill the description and click the confirm button",
             "match": {
               "location": "steps\\paymentToSystem.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 4999499
+              "duration": 7264699
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 8,
+            "line": 9,
             "name": "User should see the message \"The payment was successfully processed\"",
             "match": {
               "location": "steps\\paymentToSystem.js:21"
             },
             "result": {
               "status": "passed",
-              "duration": 10497900
+              "duration": 2698199
             }
           }
         ],
         "tags": [
           {
-            "name": "@abc",
-            "line": 2
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@pay",
+            "line": 3
           }
         ],
         "type": "scenario"
       }
     ],
     "id": "verifying-payment-to-system--module",
-    "line": 1,
+    "line": 2,
     "keyword": "Feature",
     "name": "Verifying payment to system  module",
-    "tags": [],
+    "tags": [
+      {
+        "name": "@smoke",
+        "line": 1
+      }
+    ],
     "uri": "features\\paymentToSystem.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "receive-payment-from-a-user;user-should-ablo-to-receive-a-payment-from-a-another-user",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "User should ablo to receive a payment from a another user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2370233500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should login to the application and navigate to the bannking menu",
+            "match": {
+              "location": "steps\\paymentToSystem.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5203799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "User should click the receive payment option",
+            "match": {
+              "location": "steps\\receivePayment.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1467500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "User should enter the user name",
+            "match": {
+              "location": "steps\\receivePayment.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1384800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "User should fill the amount",
+            "match": {
+              "location": "steps\\receivePayment.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1899800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "User click the next button and check the payment received or not",
+            "match": {
+              "location": "steps\\receivePayment.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1583000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@receive",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "receive-payment-from-a-user",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Receive payment from a user",
+    "tags": [
+      {
+        "name": "@smoke",
+        "line": 1
+      }
+    ],
+    "uri": "features\\receivePayment.feature"
   }
 ]

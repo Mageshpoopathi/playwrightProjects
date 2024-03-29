@@ -1,5 +1,6 @@
+@smoke
 Feature: Verifying payment to system  module
-@abc
+@pay 
 Scenario: user should pay a amount to the system
    Given User should login to the application and navigate to the bannking menu
    Then   User should click the payment to system option

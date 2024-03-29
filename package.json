@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js --require ./steps/*.js ./features/*.feature --tags @abc --format=progress"
+    "test": "npx cucumber-js --require ./steps/*.js ./features/*.feature --tags @smoke --format=progress"
   },
   "keywords": [],
   "author": "",

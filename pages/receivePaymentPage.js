@@ -24,8 +24,8 @@ const receivePayment="//nav[@class='navbar d-flex flex-column align-items-stretc
         async amount(){
             paySystem.amountFill();
         }
-        async nextButton(){
-            await global.page.locator(nextButton).click();
+        async nextButton(){  
+            await global.page.locator(nextButton).click();  
         }
     }
     module.exports={ReceivePaymentPage}

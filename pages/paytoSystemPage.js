@@ -28,6 +28,7 @@ const bankingMenu ="#menu_banking",
             await global.page.fill(description,"system")
         }
         async notificationMessage(text){
+            await page.waitForSelector(notificationMessage, { timeout: 10000 });
             await expect(page.locator(notificationMessage)).toHaveText(text);
         }
         async nextButtonClick(){
