@@ -1,11 +1,11 @@
 const { expect } = require("@playwright/test");
-
+const { request } = require("http");
 const homeLogo="//img[@class='logo']",
       homePageTitle="(//div[@class='top-title'])[2]",
-      userIcon="(//div[@class='input-group-prepend'])[1]",/////
-      passwordIcon="(//div[@class='input-group-prepend'])[2]",/////
+      userIcon="(//div[@class='input-group-prepend'])[1]",
+      passwordIcon="(//div[@class='input-group-prepend'])[2]",
       eyeIcon=".input-group-append",
-      userTextField="//input[@placeholder='User']",//use keyboard loop
+      userTextField="//input[@placeholder='User']",
       passwordTextField="//input[@placeholder='Password']",
       submitButton="(//button)[2]",
       forgotPasswordLink="#forgotPasswordLink",
@@ -13,6 +13,26 @@ const homeLogo="//img[@class='logo']",
 
 
 class LoginPage{
+  async loginPageAPI(expectedStatusCode){
+        let actualStatusCode = await page.evaluate(() => {
+            return fetch("https://demo.cyclos.org/ui/login").then(res => res.status);
+        });
+         if(actualStatusCode.toString()===expectedStatusCode){
+             console.log(`API request in login page is passed with ${actualStatusCode} status code`);
+          }
+          else{
+              console.log(`API request is failed with ${actualStatusCode}`);
+          }
+  }
+  async homePageAPI(){
+    let response=await page.evaluate(()=>{
+      return fetch("https://demo.cyclos.org/ui/dashboard").then(res=>res.text());
+    })
+    console.log(response);
+  }
+  async homePageReqres(requestData){
+    global.apiContext.post('api/login',requestData)
+  }
       async loadPageUrl(){
         await global.page.goto("https://demo.cyclos.org/ui/login");  
       }

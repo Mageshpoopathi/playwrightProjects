@@ -1,17 +1,7 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="5.399927195" tests="2">
-  <testcase classname="Verifying payment to system  module" name="user should pay a amount to the system" time="3.018154796">
-    <system-out><![CDATA[Given User should login to the application and navigate to the bannking...passed
-Then User should click the payment to system option.......................passed
-Then User should enter the amount within the balance and select the pay...passed
-When User fill the description and click the confirm button...............passed
-Then User should see the message "The payment was successfully processe...passed]]></system-out>
-  </testcase>
-  <testcase classname="Receive payment from a user" name="User should ablo to receive a payment from a another user" time="2.3817723989999995">
-    <system-out><![CDATA[Given User should login to the application and navigate to the bannking...passed
-Then User should click the receive payment option.........................passed
-Then User should enter the user name......................................passed
-Then User should fill the amount..........................................passed
-Then User click the next button and check the payment received or not.....passed]]></system-out>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="3.4709163000000003" tests="1">
+  <testcase classname="login to demo cycylos website" name="login page API verification" time="3.4709163000000003">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When check login page API status as "200".................................passed]]></system-out>
   </testcase>
 </testsuite>

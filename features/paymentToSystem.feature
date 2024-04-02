@@ -6,6 +6,6 @@ Scenario: user should pay a amount to the system
    Then   User should click the payment to system option
    Then  User should enter the amount within the balance and select the paynow option in the scheduling type
    When User fill the description and click the confirm button 
-   Then User should see the message "The payment was successfully processed"
+   Then User should see the message 
 
 

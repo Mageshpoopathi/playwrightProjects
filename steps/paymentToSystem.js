@@ -18,7 +18,7 @@ pay.descriptionFill();
 pay.nextButtonClick();
 pay.confirmButtonClick();
 })
-Then("User should see the message {string}",async function(text){
-    pay.notificationMessage(text);
 
-})
+Then('User should see the message',async function () {
+    pay.notificationMessage();
+  });

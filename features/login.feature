@@ -3,12 +3,21 @@ Feature: login to demo cycylos website
   
   Background: 
      Given User should navigate to the page URL
+
+@API
+  Scenario: login page API verification
+      When check login page API status as "200"
 @valid
   Scenario: login with valid credentials
      When User should validate the logo and title of homePage
      And User verify username and password textbox
      And verify the user and password icon
      Then User should login with valid credentials
+
+
+   Scenario:  Home page API verification
+      # When check home page API  
+      Then check home page API in reqres  
 @encrytPassword
    Scenario: verify password encryption
         When User enter the Password as "4321" 

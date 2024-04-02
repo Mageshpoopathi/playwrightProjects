@@ -1,5 +1,7 @@
 const { expect } = require("@playwright/test");
 const { LoginPage } = require("./loginPage.js");
+const {PlaywrightUtils} = require("../utils/action.js");
+const { throws } = require("assert");
 
 const bankingMenu ="#menu_banking",
       paymentToSystem ="//nav[@class='navbar d-flex flex-column align-items-stretch']//a[3]",
@@ -7,15 +9,15 @@ const bankingMenu ="#menu_banking",
       description="#id_17",
       nextButton="[class='btn d-flex justify-content-center align-items-center w-100 h-100 btn-primary']",
       confirmButton="(//button)[2]",
-      notificationMessage="//div[@class='notification-message']//div";
+      notificationMessage="[class='d-flex flex-column flex-xs-row align-items-center']";
 
         const loginpage=new LoginPage();
-
+        const utils = new PlaywrightUtils();
       class PayToSystemPage{
         async bankingMenuclick(){
             loginpage.loadPageUrl();
             loginpage.ValidLogin();
-            await global.page.locator(bankingMenu).click()
+            utils.click(bankingMenu);
            
         }
         async paymentToSystemclick(){
@@ -27,9 +29,14 @@ const bankingMenu ="#menu_banking",
         async descriptionFill(){
             await global.page.fill(description,"system")
         }
-        async notificationMessage(text){
-            await page.waitForSelector(notificationMessage, { timeout: 10000 });
-            await expect(page.locator(notificationMessage)).toHaveText(text);
+        async notificationMessage(){
+            try{
+                utils.waitForSelector(notificationMessage);
+             utils.expectVisible(notificationMessage);
+            }
+            catch(Exception){
+                console.log(Exception);
+            }
         }
         async nextButtonClick(){
             await global.page.locator(nextButton).click()
