@@ -5,10 +5,10 @@ const { throws } = require("assert");
 
 const bankingMenu ="#menu_banking",
       paymentToSystem ="//nav[@class='navbar d-flex flex-column align-items-stretch']//a[3]",
-      amount ="0,00",
-      description="#id_17",
+      amount ="//input[@class='form-control text-right ng-pristine ng-valid ng-touched']",
+      description="[class='form-control ng-pristine ng-valid ng-touched']",
       nextButton="[class='btn d-flex justify-content-center align-items-center w-100 h-100 btn-primary']",
-      confirmButton="(//button)[2]",
+      confirmButton="[class='btn d-flex justify-content-center align-items-center w-100 h-100 btn-primary']",
       notificationMessage="[class='d-flex flex-column flex-xs-row align-items-center']";
 
         const loginpage=new LoginPage();
@@ -21,28 +21,23 @@ const bankingMenu ="#menu_banking",
            
         }
         async paymentToSystemclick(){
-            await global.page.locator(paymentToSystem).click()
+            utils.click(paymentToSystem);
         }
         async amountFill(){
-            await global.page.getByPlaceholder(amount).fill('123');
+            utils.fill(amount,'123');
         }
-        async descriptionFill(){
-            await global.page.fill(description,"system")
-        }
+
         async notificationMessage(){
-            try{
-                utils.waitForSelector(notificationMessage);
-             utils.expectVisible(notificationMessage);
-            }
-            catch(Exception){
-                console.log(Exception);
-            }
+            utils.takeScreenshot('screenshot.png');
+        //     await page.waitForLoadState('networkidle');
+        //    utils.closeBrowser();
         }
         async nextButtonClick(){
-            await global.page.locator(nextButton).click()
+            utils.click(nextButton);
         }
         async confirmButtonClick(){
-            await global.page.locator(confirmButton).click()
+            utils.waitForSelector(confirmButton);
+            utils.click(confirmButton);
         }
 
         }

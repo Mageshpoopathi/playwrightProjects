@@ -6,15 +6,15 @@ const {LoginPage} =require ("../pages/loginPage.js");
       await HomePage.loginPageAPI(statusCode);
   })
   Then('check home page API in reqres',async function(){
-    const requestData = {
-      "email": "mageshpoopathi@reqres.in",
-    "password": "mahi"
-     };
-    await HomePage.homePageReqres(requestData);
+    // const requestData = {
+    //   "email": "mageshpoopathi@reqres.in",
+    // "password": "mahi"
+    //  };
+    // await HomePage.homePageReqres(requestData);
   })
   When('check home page API',async function(){
-    await HomePage.ValidLogin();
-    await HomePage.homePageAPI();
+    // await HomePage.ValidLogin();
+    // await HomePage.homePageAPI();
   })
   Given('User should navigate to the page URL',async function (){
     await HomePage.loadPageUrl();

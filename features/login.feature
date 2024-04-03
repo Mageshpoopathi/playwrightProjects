@@ -1,4 +1,4 @@
-
+@login
 Feature: login to demo cycylos website
   
   Background: 

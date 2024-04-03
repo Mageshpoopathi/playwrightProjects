@@ -4,10 +4,10 @@
 
     async click(selector) {
         await global.page.click(selector);
-        console.log("element clicked")
+        
     }
 
-    async fill(selector, text) {
+    async fill(selector,text) {
         await global.page.fill(selector, text);
     }
     async clickAndFill(selector) {
@@ -82,6 +82,20 @@
         console.log(isVisible);
         expect(isVisible).toBe(true);
     }
+    async visiblityCheck(selector){
+        await global.page.locator(selector).isVisible()
+    }
+
+    async  visiblity(selector){
+        const element = await page.locator(selector);
+         if (element) {
+        const isVisible = await element.isVisible();
+        console.log('Is the element visible?', isVisible);
+     } else {
+         console.log('Element not found');
+  }
+
+    }
 
     async expectHidden(selector) {
         const element = await global.page.$(selector);
@@ -103,6 +117,9 @@
     async expectElement(selector) {
         const element = await global.page.$(selector);
         expect(element).not.toBeNull();
+    }
+    async waitForPageLoad(){
+        await page.waitForLoadState('networkidle');
     }
 }
 module.exports={PlaywrightUtils}

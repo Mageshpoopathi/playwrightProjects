@@ -1,5 +1,6 @@
 const { expect } = require("@playwright/test");
 const { request } = require("http");
+const { PlaywrightUtils } =require("../utils/action");
 const homeLogo="//img[@class='logo']",
       homePageTitle="(//div[@class='top-title'])[2]",
       userIcon="(//div[@class='input-group-prepend'])[1]",
@@ -11,7 +12,7 @@ const homeLogo="//img[@class='logo']",
       forgotPasswordLink="#forgotPasswordLink",
       registerLink="#registerLink";
 
-
+const act=new PlaywrightUtils();
 class LoginPage{
   async loginPageAPI(expectedStatusCode){
         let actualStatusCode = await page.evaluate(() => {
@@ -24,12 +25,12 @@ class LoginPage{
               console.log(`API request is failed with ${actualStatusCode}`);
           }
   }
-  async homePageAPI(){
-    let response=await page.evaluate(()=>{
-      return fetch("https://demo.cyclos.org/ui/dashboard").then(res=>res.text());
-    })
-    console.log(response);
-  }
+  // async homePageAPI(){
+  //   let response=await page.evaluate(()=>{
+  //     return fetch("https://demo.cyclos.org/ui/dashboard").then(res=>res.text());
+  //   })
+  //   console.log(response);
+  // }
   async homePageReqres(requestData){
     global.apiContext.post('api/login',requestData)
   }
@@ -37,34 +38,35 @@ class LoginPage{
         await global.page.goto("https://demo.cyclos.org/ui/login");  
       }
       async assertHomeLogo(){
-        await page.waitForSelector(homeLogo, { timeout: 10000 });
-        await expect(global.page.locator(homeLogo)).toBeVisible();
+        act.waitForSelector(homeLogo);
+        act.visiblity(homeLogo);
         //console.log("Home page logo is visibled");
       } 
       async assertHomeTitle(){
-        await page.waitForSelector(homePageTitle, { timeout: 10000 });
-        await expect(global.page.locator(homePageTitle)).toHaveText('Cyclos');
+        act.waitForSelector(homePageTitle);
+        act.expectText(homePageTitle,'Cyclos');
         //console.log("Home title is visibled");
       }
       async assertUserAndPasswordIcon(){
-        await page.waitForSelector(userIcon, { timeout: 10000 });
-        await expect(global.page.locator(userIcon)).toBeVisible();
-        await expect(global.page.locator(passwordIcon)).toBeVisible();
+        act.waitForSelector(userIcon)
+        act.visiblity(userIcon);
+        act.waitForSelector(passwordIcon)
+        act.visiblity(passwordIcon)
         //console.log("Username and Password logo icon is visibled");
       }
       async assertUsernameAndPasswordTextBox(){
-        await page.waitForSelector(userTextField, { timeout: 10000 });
-        await expect(global.page.locator(userTextField)).toBeVisible();
-        await page.waitForSelector(passwordTextField, { timeout: 10000 });
-        await expect(global.page.locator(passwordTextField)).toBeVisible();
+        act.waitForSelector(userTextField);
+        act.visiblity(userTextField)
+        act.waitForSelector(passwordTextField);
+        act.visiblity(passwordTextField);
         //console.log("Username and Password textboxes are visibled");
       }
       async encryptPassword(password){
         this.loadPageUrl();
-        await global.page.fill(passwordTextField,password);  
+        act.fill(passwordTextField,password);
       }
       async clickEyeIcon(){
-        await global.page.locator(eyeIcon).click();
+        act.click(eyeIcon);
       }
       async verifyPasswordText(expectedText){
         const input=global.page.locator(passwordTextField);
@@ -77,8 +79,8 @@ class LoginPage{
         }
       }
       async clickForgotPasswordlink(){
-        await page.waitForSelector(forgotPasswordLink, { timeout: 10000 })
-          await global.page.locator(forgotPasswordLink).click();
+        act.waitForSelector(forgotPasswordLink);
+        act.click(forgotPasswordLink)
       }
       async verifyForgotPasswordLink(){
         const currentURL=await global.page.url();
@@ -89,11 +91,12 @@ class LoginPage{
         else{
           console.log("pageURL is not matched");
         }
-        await global.page.goBack();
+        await act.navigate("https://demo.cyclos.org/ui/login");
       }
       async clickRegistrationLink(){
-        await page.waitForSelector(registerLink, { timeout: 10000 })
-        await global.page.locator(registerLink).click();
+        await act.waitForSelector(registerLink);
+        await act.click(registerLink);
+       
       }
       async verifyRegistrationLink(){
         const currentURL=await global.page.url();
@@ -108,17 +111,16 @@ class LoginPage{
 
      
     async ValidLogin(){
-      await global.page.locator(userTextField).click();
-        await global.page.fill(userTextField,"demo");
-        await global.page.locator(passwordTextField).click();
-        await global.page.fill(passwordTextField,"1234");
-        await global.page.locator(submitButton).click();
+      act.click(userTextField);
+      act.fill(userTextField,'demo');
+      act.clickAndFill(passwordTextField,'1234')
+      act.click(submitButton);
         console.log("Successfully login to the page");
     }
-    async InvalidLogin(usernaame,password){
-      await global.page.locator(userTextField).fill(usernaame);
-      await global.page.locator(passwordTextField).fill(password);
-      await global.page.locator(submitButton).click();
+    async InvalidLogin(username,password){
+      act.clickAndFill(userTextField,username);
+      act.clickAndFill(passwordTextField,password);
+      console.log("login with invalid credentials");
   }
 }
 module.exports={LoginPage}

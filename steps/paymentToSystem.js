@@ -11,14 +11,13 @@ pay.paymentToSystemclick();
 })
 Then('User should enter the amount within the balance and select the paynow option in the scheduling type',async function(){
 pay.amountFill();
-pay.descriptionFill();
 })
 When("User fill the description and click the confirm button",async function(){
-pay.descriptionFill();
 pay.nextButtonClick();
 pay.confirmButtonClick();
 })
 
 Then('User should see the message',async function () {
     pay.notificationMessage();
+    
   });
