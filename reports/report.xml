@@ -1,54 +1,7 @@
 <?xml version="1.0"?>
-<testsuite failures="2" skipped="0" name="cucumber-js" time="25.909415487000004" tests="7">
-  <testcase classname="login to demo cycylos website" name="login page API verification" time="3.366482799">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="3.278460398" tests="1">
+  <testcase classname="login to demo cycylos website" name="login page API verification" time="3.278460398">
     <system-out><![CDATA[Given User should navigate to the page URL................................passed
 When check login page API status as "200".................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="login with valid credentials" time="3.1786461000000004">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User should validate the logo and title of homePage..................passed
-And User verify username and password textbox.............................passed
-And verify the user and password icon.....................................passed
-Then User should login with valid credentials.............................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Home page API verification" time="0.001298799">
-    <failure type="TypeError" message="global.page.click(...).fill is not a function"><![CDATA[TypeError: global.page.click(...).fill is not a function
-    at PlaywrightUtils.clickAndFill (C:\Jenkins\Packages\Playwright\utils\action.js:14:43)
-    at LoginPage.ValidLogin (C:\Jenkins\Packages\Playwright\pages\loginPage.js:116:11)
-    at World.<anonymous> (C:\Jenkins\Packages\Playwright\steps\login.js:54:20)]]></failure>
-    <system-out><![CDATA[Given User should navigate to the page URL...............................skipped
-Then check home page API in reqres.......................................skipped]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="verify password encryption" time="8.278854797000001">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User enter the Password as "4321"....................................passed
-And verify the password as "....".........................................passed
-And click the eye button..................................................passed
-Then verify the password as "4321"........................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="verify the forgotPassword and Registration links" time="6.399910696000001">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User click the forgot password link..................................passed
-And verify the forgotPassword page........................................passed
-Then User click the Registration link.....................................passed
-And verify the Registration page..........................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials" time="4.682358897">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User should validate the logo and title of homePage..................passed
-And User verify username and password textbox.............................passed
-And verify the user and password icon.....................................passed
-Then User should login with invalid credentials of "User1" and "1234".....passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials [1]" time="0.001863399">
-    <failure type="TypeError" message="global.page.click(...).fill is not a function"><![CDATA[TypeError: global.page.click(...).fill is not a function
-    at PlaywrightUtils.clickAndFill (C:\Jenkins\Packages\Playwright\utils\action.js:14:43)
-    at LoginPage.InvalidLogin (C:\Jenkins\Packages\Playwright\pages\loginPage.js:121:11)
-    at World.<anonymous> (C:\Jenkins\Packages\Playwright\steps\login.js:57:22)]]></failure>
-    <system-out><![CDATA[Given User should navigate to the page URL...............................skipped
-When User should validate the logo and title of homePage.................skipped
-And User verify username and password textbox............................skipped
-And verify the user and password icon....................................skipped
-Then User should login with invalid credentials of "demo" and "2345".....skipped]]></system-out>
   </testcase>
 </testsuite>

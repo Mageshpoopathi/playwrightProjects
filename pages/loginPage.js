@@ -1,6 +1,7 @@
 const { expect } = require("@playwright/test");
 const { request } = require("http");
 const { PlaywrightUtils } =require("../utils/action");
+const {API} =require('../utils/apiMethods');
 const homeLogo="//img[@class='logo']",
       homePageTitle="(//div[@class='top-title'])[2]",
       userIcon="(//div[@class='input-group-prepend'])[1]",
@@ -13,17 +14,20 @@ const homeLogo="//img[@class='logo']",
       registerLink="#registerLink";
 
 const act=new PlaywrightUtils();
+const apiMethods=new API();
 class LoginPage{
   async loginPageAPI(expectedStatusCode){
-        let actualStatusCode = await page.evaluate(() => {
-            return fetch("https://demo.cyclos.org/ui/login").then(res => res.status);
-        });
-         if(actualStatusCode.toString()===expectedStatusCode){
-             console.log(`API request in login page is passed with ${actualStatusCode} status code`);
-          }
-          else{
-              console.log(`API request is failed with ${actualStatusCode}`);
-          }
+    apiMethods.verifyStatusCode('https://demo.cyclos.org/ui/login',expectedStatusCode);
+    apiMethods.verifyText('https://demo.cyclos.org/ui/login');
+        // let actualStatusCode = await page.evaluate(() => {
+        //     return fetch("").then(res => res.status);
+        // });
+        //  if(actualStatusCode.toString()===expectedStatusCode){
+        //      console.log(`API request in login page is passed with ${actualStatusCode} status code`);
+        //   }
+        //   else{
+        //       console.log(`API request is failed with ${actualStatusCode}`);
+        //   }
   }
   // async homePageAPI(){
   //   let response=await page.evaluate(()=>{
@@ -31,9 +35,9 @@ class LoginPage{
   //   })
   //   console.log(response);
   // }
-  async homePageReqres(requestData){
-    global.apiContext.post('api/login',requestData)
-  }
+  // async homePageReqres(requestData){
+  //   global.apiContext.post('api/login',requestData)
+  // }
       async loadPageUrl(){
         await global.page.goto("https://demo.cyclos.org/ui/login");  
       }
