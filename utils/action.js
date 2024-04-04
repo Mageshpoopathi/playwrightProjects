@@ -1,4 +1,4 @@
- const { expect } = require("@playwright/test");
+ const expect  = require("@playwright/test");
  class PlaywrightUtils {
    
 
@@ -73,28 +73,9 @@
         const actualValue = await global.page.getAttribute(selector, attributeName);
         expect(actualValue).toBe(expectedValue);
     }
-
-
-    async expectVisible(selector) {
-        const element = await global.page.locator(selector);
-        expect(element).not.toBeNull();
-        const isVisible = await element.isVisible();
-        console.log(isVisible);
-        expect(isVisible).toBe(true);
-    }
-    async visiblityCheck(selector){
-        await global.page.locator(selector).isVisible()
-    }
-
     async  visiblity(selector){
-        const element = await page.locator(selector);
-         if (element) {
-        const isVisible = await element.isVisible();
-        console.log('Is the element visible?', isVisible);
-     } else {
-         console.log('Element not found');
-  }
-
+        global.page.waitForTimeout(7000);
+        await page.locator(selector).isVisible();
     }
 
     async expectHidden(selector) {

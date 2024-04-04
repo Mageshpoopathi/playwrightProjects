@@ -18,7 +18,7 @@ const apiMethods=new API();
 class LoginPage{
   async loginPageAPI(expectedStatusCode){
     apiMethods.verifyStatusCode('https://demo.cyclos.org/ui/login',expectedStatusCode);
-    apiMethods.verifyText('https://demo.cyclos.org/ui/login');
+    apiMethods.verifyHeaders('https://demo.cyclos.org/ui/login');
         // let actualStatusCode = await page.evaluate(() => {
         //     return fetch("").then(res => res.status);
         // });
@@ -66,13 +66,15 @@ class LoginPage{
         //console.log("Username and Password textboxes are visibled");
       }
       async encryptPassword(password){
-        this.loadPageUrl();
+        act.click(passwordTextField);
         act.fill(passwordTextField,password);
       }
       async clickEyeIcon(){
+        act.waitForTimeout(7000);
         act.click(eyeIcon);
       }
       async verifyPasswordText(expectedText){
+        act.waitForTimeout(7000);
         const input=global.page.locator(passwordTextField);
         const actualText = await input.evaluate(element => element.value);
         if(actualText===expectedText){
@@ -85,17 +87,21 @@ class LoginPage{
       async clickForgotPasswordlink(){
         act.waitForSelector(forgotPasswordLink);
         act.click(forgotPasswordLink)
+        act.waitForTimeout(7000);
       }
       async verifyForgotPasswordLink(){
+        act.waitForTimeout(7000);
         const currentURL=await global.page.url();
+        const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/post-login/forgot-password";
-        if(currentURL===expectedURL){
+        if(Url===expectedURL){
           console.log("pageURL is matched");
         }
         else{
           console.log("pageURL is not matched");
         }
         await act.navigate("https://demo.cyclos.org/ui/login");
+        act.waitForTimeout(7000);
       }
       async clickRegistrationLink(){
         await act.waitForSelector(registerLink);
@@ -103,9 +109,13 @@ class LoginPage{
        
       }
       async verifyRegistrationLink(){
+        act.waitForTimeout(7000);
         const currentURL=await global.page.url();
+        const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/users/registration";
-        if(currentURL===expectedURL){
+        console.log(typeof(Url));
+        console.log(typeof(expectedURL));
+        if(Url===expectedURL){
           console.log("pageURL is matched");
         }
         else{
@@ -117,13 +127,18 @@ class LoginPage{
     async ValidLogin(){
       act.click(userTextField);
       act.fill(userTextField,'demo');
-      act.clickAndFill(passwordTextField,'1234')
+      act.click(passwordTextField);
+      act.fill(passwordTextField,'1234');
       act.click(submitButton);
         console.log("Successfully login to the page");
+        act.waitForTimeout(7000);
     }
     async InvalidLogin(username,password){
-      act.clickAndFill(userTextField,username);
-      act.clickAndFill(passwordTextField,password);
+      act.click(userTextField);
+      act.fill(userTextField,username);
+      act.click(passwordTextField);
+      act.fill(passwordTextField,password);
+      act.waitForTimeout(7000);
       console.log("login with invalid credentials");
   }
 }

@@ -1,7 +1,6 @@
 const { Before, AfterAll, After, Status,setDefaultTimeout } = require('@cucumber/cucumber');
-const {test} =require('@playwright/test');
 const page = require('@playwright/test');
-const request=require('@playwright/test');
+
  
 Before(async ({}) => {
     console.log('Launch Browser');
@@ -27,4 +26,4 @@ Before(async ({}) => {
  
 // AfterAll(async()=>{ 
 // await global.browser.close();
-// }
+// });
