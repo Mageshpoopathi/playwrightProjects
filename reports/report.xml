@@ -1,45 +1,7 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="31.540814783" tests="7">
-  <testcase classname="login to demo cycylos website" name="login page API verification" time="3.402727598">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="2.4664449" tests="1">
+  <testcase classname="login to demo cycylos website" name="login page API verification" time="2.4664449">
     <system-out><![CDATA[Given User should navigate to the page URL................................passed
 When check login page API status as "200".................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="login with valid credentials" time="3.293201399">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User should validate the logo and title of homePage..................passed
-And User verify username and password textbox.............................passed
-And verify the user and password icon.....................................passed
-Then User should login with valid credentials.............................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Home page API verification" time="1.5365062">
-    <system-out/>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="verify password encryption" time="6.596784295999999">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User enter the Password as "4321"....................................passed
-And verify the password as "....".........................................passed
-And click the eye button..................................................passed
-Then verify the password as "4321"........................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="verify the forgotPassword and Registration links" time="6.840775697">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User click the forgot password link..................................passed
-And verify the forgotPassword page........................................passed
-Then User click the Registration link.....................................passed
-And verify the Registration page..........................................passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials" time="5.096891996">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User should validate the logo and title of homePage..................passed
-And User verify username and password textbox.............................passed
-And verify the user and password icon.....................................passed
-Then User should login with invalid credentials of "User1" and "1234".....passed]]></system-out>
-  </testcase>
-  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials [1]" time="4.773927596999999">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When User should validate the logo and title of homePage..................passed
-And User verify username and password textbox.............................passed
-And verify the user and password icon.....................................passed
-Then User should login with invalid credentials of "demo" and "2345"......passed]]></system-out>
   </testcase>
 </testsuite>

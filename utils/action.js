@@ -3,12 +3,12 @@
    
 
     async click(selector) {
-        await global.page.click(selector);
+        await global.page.locator(selector).click();
         
     }
 
     async fill(selector,text) {
-        await global.page.fill(selector, text);
+        await global.page.locator(selector).fill(text);
     }
     async clickAndFill(selector) {
         await global.page.click(selector).fill(selector);

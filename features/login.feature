@@ -14,10 +14,6 @@ Feature: login to demo cycylos website
      And verify the user and password icon
      Then User should login with valid credentials
 
-
-   Scenario:  Home page API verification
-      # When check home page API  
-      #Then check home page API in reqres  
 @encrytPassword
    Scenario: verify password encryption
         When User enter the Password as "4321" 
@@ -42,4 +38,3 @@ Feature: login to demo cycylos website
       Examples:
           | Username |  Password | 
           | User1    |    1234   |
-          | demo     |    2345   |

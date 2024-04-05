@@ -2,9 +2,9 @@ const { Before, AfterAll, After, Status,setDefaultTimeout } = require('@cucumber
 const page = require('@playwright/test');
 
  
-Before(async ({}) => {
+Before(async () => {
     console.log('Launch Browser');
-    let browser = await page.chromium.launch({ headless: false, args: ['--window-size=1920,1040'] });
+    let browser = await page.chromium.launch({ headless: true, args: ['--window-size=1920,1040'] });
     global.browser = browser;
     const context = await browser.newContext();
     global.page = await context.newPage();

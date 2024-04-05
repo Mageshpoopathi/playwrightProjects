@@ -66,6 +66,7 @@ class LoginPage{
         //console.log("Username and Password textboxes are visibled");
       }
       async encryptPassword(password){
+        this.loadPageUrl();
         act.click(passwordTextField);
         act.fill(passwordTextField,password);
       }
@@ -95,10 +96,10 @@ class LoginPage{
         const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/post-login/forgot-password";
         if(Url===expectedURL){
-          console.log("pageURL is matched");
+          console.log("pageURL is not matched");
         }
         else{
-          console.log("pageURL is not matched");
+          console.log("pageURL is matched");
         }
         await act.navigate("https://demo.cyclos.org/ui/login");
         act.waitForTimeout(7000);
@@ -113,13 +114,11 @@ class LoginPage{
         const currentURL=await global.page.url();
         const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/users/registration";
-        console.log(typeof(Url));
-        console.log(typeof(expectedURL));
         if(Url===expectedURL){
-          console.log("pageURL is matched");
+          console.log("pageURL is not matched");
         }
         else{
-          console.log("pageURL is not matched");
+          console.log("pageURL is matched");
         }
       }
 
@@ -134,7 +133,7 @@ class LoginPage{
         act.waitForTimeout(7000);
     }
     async InvalidLogin(username,password){
-      act.click(userTextField);
+      // act.click(userTextField);
       act.fill(userTextField,username);
       act.click(passwordTextField);
       act.fill(passwordTextField,password);

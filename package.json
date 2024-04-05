@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js --require ./steps/*.js ./features/*.feature --tags @login --format=progress"
+    "test": "npx cucumber-js --require ./steps/*.js ./features/*.feature --tags @API --format=progress"
   },
   "keywords": [],
   "author": "",
