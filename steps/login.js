@@ -5,17 +5,18 @@ const {LoginPage} =require ("../pages/loginPage.js");
   When('check login page API status as {string}',async function(statusCode){
       await HomePage.loginPageAPI(statusCode);
   })
-  // Then('check home page API in reqres',async function(){
-  //   // const requestData = {
-  //   //   "email": "mageshpoopathi@reqres.in",
-  //   // "password": "mahi"
-  //   //  };
-  //   // await HomePage.homePageReqres(requestData);
-  // })
-  // When('check home page API',async function(){
-  //   // await HomePage.ValidLogin();
-  //   // await HomePage.homePageAPI();
-  // })
+  Then('User should validate the homepage',async function(){
+      await HomePage.validateHomePageLogo();
+  })
+  When('check homePage API status as {string}',async function(statusCode){
+    await HomePage.homePageAPI(statusCode);
+  })
+  When('check forgotPassword link API status as {string} and contentType',async function(statusCode){
+      await HomePage.forgotPasswordLinkAPI(statusCode);
+  })
+  Then('verify Registration link API status as {string} and contentType',async function(statusCode){
+    await HomePage.RegistartionLinkAPI(statusCode);
+  })
   Given('User should navigate to the page URL',async function (){
     await HomePage.loadPageUrl();
   });

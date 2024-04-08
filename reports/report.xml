@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="2.4664449" tests="1">
-  <testcase classname="login to demo cycylos website" name="login page API verification" time="2.4664449">
-    <system-out><![CDATA[Given User should navigate to the page URL................................passed
-When check login page API status as "200".................................passed]]></system-out>
-  </testcase>
-</testsuite>

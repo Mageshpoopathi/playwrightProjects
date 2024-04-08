@@ -30,6 +30,8 @@ class API{
         let response=await page.evaluate(()=>{
             return fetch(URL).then(response=>response.headers);
         })
+        var ct=response.headers();
+        console.log(ct);
         console.log(response);
     }
     async verifyJson(url){
@@ -89,6 +91,28 @@ class API{
         const responseBody = await response.json();
         console.log(responseBody);
     }
+    async postDataInText(){
+        const postData = {
+            username: 'demo',
+            password: '1234'
+          };
+          const formData = new URLSearchParams();
+        for (const [key, value] of Object.entries(postData)) {
+             formData.append(key, value);
+         }
+  
+         const response = await page.evaluate(async (formData) => {
+        const response = await fetch('https://demo.cyclos.org/ui/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+    });
+         return await response.text(); // You can return response.json() if the response is JSON
+         }, formData);
+        console.log('Response:', response);
+}
     async patchRequest(url,payload,method){
         var URL=url.toString();
         const response = await page.evaluate(async (URL, payload, method) => {
@@ -112,6 +136,19 @@ class API{
             });
         }, URL);
         expect(response.ok()).toBeTruthy();
+    }
+    async getHeader(url){
+        var URL=url.toString();
+        const response = await page.goto(URL, {
+            method: 'GET',
+            headers: {
+                'Accept': 'text/html',
+                'Accept' :'application/json'
+        },
+            });
+
+         const contentType = response.headers()['content-type'];
+         console.log("Content type is "+contentType);
     }
 }
 module.exports={API};
