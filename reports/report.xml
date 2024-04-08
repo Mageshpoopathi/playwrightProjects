@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="46.631145573" tests="8">
+  <testcase classname="login to demo cycylos website" name="login page API verification" time="4.8194382959999995">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When check login page API status as "200".................................passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="login with valid credentials" time="9.324591395999999">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When User should validate the logo and title of homePage..................passed
+And User verify username and password textbox.............................passed
+And verify the user and password icon.....................................passed
+And User should login with valid credentials..............................passed
+Then User should validate the homepage....................................passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="Home page API verification" time="3.7007140979999997">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When check homePage API status as "200"...................................passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="verify password encryption" time="5.9876437959999995">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When User enter the Password as "4321"....................................passed
+And verify the password as "....".........................................passed
+And click the eye button..................................................passed
+Then verify the password as "4321"........................................passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="verify the forgotPassword and Registration links" time="5.955987198000001">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When User click the forgot password link..................................passed
+And verify the forgotPassword page........................................passed
+Then User click the Registration link.....................................passed
+And verify the Registration page..........................................passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="verify home page links API" time="4.450019795999999">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When check forgotPassword link API status as "200" and contentType........passed
+Then verify Registration link API status as "200" and contentType.........passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials" time="6.217457296999999">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When User should validate the logo and title of homePage..................passed
+And User verify username and password textbox.............................passed
+And verify the user and password icon.....................................passed
+Then User should login with invalid credentials of "User1" and "1234".....passed]]></system-out>
+  </testcase>
+  <testcase classname="login to demo cycylos website" name="Login with different invalid credentials [1]" time="6.175293695999999">
+    <system-out><![CDATA[Given User should navigate to the page URL................................passed
+When User should validate the logo and title of homePage..................passed
+And User verify username and password textbox.............................passed
+And verify the user and password icon.....................................passed
+Then User should login with invalid credentials of "user2" and "4321".....passed]]></system-out>
+  </testcase>
+</testsuite>

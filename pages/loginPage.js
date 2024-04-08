@@ -38,7 +38,7 @@ class LoginPage{
     await apiMethods.verifyStatusCode('https://demo.cyclos.org/ui/users/registration',expectedStatusCode);
     await apiMethods.getHeader('https://demo.cyclos.org/ui/users/registration');
   }
-      async loadPageUrl(){
+      async loadPageUrl(){ 
         await global.page.goto("https://demo.cyclos.org/ui/login");  
       }
       async assertHomeLogo(){
@@ -71,11 +71,11 @@ class LoginPage{
         await act.fill(passwordTextField,password);
       }
       async clickEyeIcon(){
-         act.waitForTimeout(7000);
+        
         await act.click(eyeIcon);
       }
       async verifyPasswordText(expectedText){
-         act.waitForTimeout(7000);
+         
          const input=global.page.locator(passwordTextField);
         const actualText = await input.evaluate(element => element.value);
         if(actualText===expectedText){
@@ -88,10 +88,10 @@ class LoginPage{
       async clickForgotPasswordlink(){
         act.waitForSelector(forgotPasswordLink);
         act.click(forgotPasswordLink)
-        act.waitForTimeout(7000);
+        
       }
       async verifyForgotPasswordLink(){
-        act.waitForTimeout(7000);
+        
         const currentURL=await global.page.url();
         const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/post-login/forgot-password";
@@ -102,7 +102,6 @@ class LoginPage{
           console.log("pageURL is matched");
         }
         await act.navigate("https://demo.cyclos.org/ui/login");
-        act.waitForTimeout(7000);
       }
       async clickRegistrationLink(){
         await act.waitForSelector(registerLink);
@@ -110,7 +109,6 @@ class LoginPage{
        
       }
       async verifyRegistrationLink(){
-         act.waitForTimeout(7000);
         const currentURL=await global.page.url();
         const Url=currentURL.toString();
         const expectedURL="https://demo.cyclos.org/ui/users/registration";
@@ -136,7 +134,6 @@ class LoginPage{
       await act.fill(userTextField,username);
       await act.click(passwordTextField);
       await act.fill(passwordTextField,password);
-       act.waitForTimeout(7000);
       console.log("login with invalid credentials");
   }
 }

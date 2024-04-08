@@ -1,0 +1,727 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;login-page-api-verification",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "login page API verification",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1971066199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1875717699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "check login page API status as \"200\"",
+            "match": {
+              "location": "steps\\login.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 571648699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 401005699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@API",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2941667899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1842356900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "User should validate the logo and title of homePage",
+            "match": {
+              "location": "steps\\login.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2555306100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "User verify username and password textbox",
+            "match": {
+              "location": "steps\\login.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26763300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "verify the user and password icon",
+            "match": {
+              "location": "steps\\login.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36885499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "User should login with valid credentials",
+            "match": {
+              "location": "steps\\login.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 281501399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "User should validate the homepage",
+            "match": {
+              "location": "steps\\login.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 922652700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 717457599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@valid",
+            "line": 10
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;home-page-api-verification",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Home page API verification",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 990585999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1848882300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "check homePage API status as \"200\"",
+            "match": {
+              "location": "steps\\login.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 514472799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 346773000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;verify-password-encryption",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "verify password encryption",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1048773699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1837498099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "User enter the Password as \"4321\"",
+            "match": {
+              "location": "steps\\login.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2503825500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "verify the password as \"....\"",
+            "match": {
+              "location": "steps\\login.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37439500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "click the eye button",
+            "match": {
+              "location": "steps\\login.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122232199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "verify the password as \"4321\"",
+            "match": {
+              "location": "steps\\login.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16788500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 421086299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@encrytPassword",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;verify-the-forgotpassword-and-registration-links",
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "verify the forgotPassword and Registration links",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 995258300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1831794600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "User click the forgot password link",
+            "match": {
+              "location": "steps\\login.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1695900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "verify the forgotPassword page",
+            "match": {
+              "location": "steps\\login.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 386826999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "User click the Registration link",
+            "match": {
+              "location": "steps\\login.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2223461199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "verify the Registration page",
+            "match": {
+              "location": "steps\\login.js:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 581200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 516369000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@homePageLinks",
+            "line": 28
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;verify-home-page-links-api",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "verify home page links API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1019909599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1872725600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "check forgotPassword link API status as \"200\" and contentType",
+            "match": {
+              "location": "steps\\login.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 520722599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "verify Registration link API status as \"200\" and contentType",
+            "match": {
+              "location": "steps\\login.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 610447099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 426214899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;login-with-different-invalid-credentials",
+        "keyword": "Scenario Outline",
+        "line": 48,
+        "name": "Login with different invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1054533300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1836560699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "User should validate the logo and title of homePage",
+            "match": {
+              "location": "steps\\login.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2495962600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "User verify username and password textbox",
+            "match": {
+              "location": "steps\\login.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61055799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "verify the user and password icon",
+            "match": {
+              "location": "steps\\login.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54864899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "User should login with invalid credentials of \"User1\" and \"1234\"",
+            "match": {
+              "location": "steps\\login.js:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 283815800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 430664200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@invalid",
+            "line": 39
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-demo-cycylos-website;login-with-different-invalid-credentials",
+        "keyword": "Scenario Outline",
+        "line": 49,
+        "name": "Login with different invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1166196600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User should navigate to the page URL",
+            "match": {
+              "location": "steps\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1848618900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "User should validate the logo and title of homePage",
+            "match": {
+              "location": "steps\\login.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2484788199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "User verify username and password textbox",
+            "match": {
+              "location": "steps\\login.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27490799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "verify the user and password icon",
+            "match": {
+              "location": "steps\\login.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57888199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "User should login with invalid credentials of \"user2\" and \"4321\"",
+            "match": {
+              "location": "steps\\login.js:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 156227899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 434083100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          },
+          {
+            "name": "@invalid",
+            "line": 39
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-to-demo-cycylos-website",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "login to demo cycylos website",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "features\\login.feature"
+  }
+]

@@ -73,7 +73,6 @@
         expect(actualValue).toBe(expectedValue);
     }
     async  visiblity(selector){
-        global.page.waitForTimeout(7000);
         await page.locator(selector).isVisible();
     }
 
